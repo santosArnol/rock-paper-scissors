@@ -1,7 +1,26 @@
+let results = {
+    scissors : {
+        rock: "You lose!",
+        paper: "You WIN!",
+        scissors: "It's a draw..."
+    },
+    rock : {
+        paper: "You lose!",
+        scissors: "You WIN!",
+        rock: "It's a draw..."
+    }, 
+    paper : {
+        scissors: "You lose!",
+        rock: "You WIN!",
+        paper: "It's a draw..."
+    }       
+
+}
+
 //Generate a random number (1-3), each stand for a respective choice
 //Return choice as a string
 
-let getComputerChoice = () => {
+const getComputerChoice = () => {
     const ranNum = Math.floor(Math.random() * 3) + 1;
     switch (ranNum) {
         case 1:
@@ -13,8 +32,8 @@ let getComputerChoice = () => {
     }
 }
 
-let playRound = (playerSelection, computerSelection) => {
-    console.log("PC choice was "+computerSelection)
+/*let playRound = (playerSelection, computerSelection,) => {
+    console.log("PC choice was " + computerSelection)
     if (playerSelection == "rock") {
         switch (computerSelection) {
             case "rock":
@@ -52,7 +71,13 @@ let playRound = (playerSelection, computerSelection) => {
         }
     }
 }
+*/
+const playRound = (playerSelection, computerSelection) => {
+    console.log("PC choice was " + computerSelection);
+    console.log("Your choice was " + playerSelection);     
+    return results[playerSelection][computerSelection];
+}
 
 let playerSelection = prompt("Make Your Choice: ")
 
-console.log(playRound(playerSelection,getComputerChoice()));
+console.log(playRound(playerSelection,getComputerChoice(),results));
