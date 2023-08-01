@@ -1,19 +1,19 @@
 let results = {
-    scissors : {
+    scissors: {
         rock: "You lose!",
         paper: "You WIN!",
         scissors: "It's a draw..."
     },
-    rock : {
+    rock: {
         paper: "You lose!",
         scissors: "You WIN!",
         rock: "It's a draw..."
-    }, 
-    paper : {
+    },
+    paper: {
         scissors: "You lose!",
         rock: "You WIN!",
         paper: "It's a draw..."
-    }       
+    }
 
 }
 
@@ -74,10 +74,22 @@ const getComputerChoice = () => {
 */
 const playRound = (playerSelection, computerSelection) => {
     console.log("PC choice was " + computerSelection);
-    console.log("Your choice was " + playerSelection);     
+    console.log("Your choice was " + playerSelection);
     return results[playerSelection][computerSelection];
 }
 
-let playerSelection = prompt("Make Your Choice: ")
+const getPlayerChoice = () => {
 
-console.log(playRound(playerSelection,getComputerChoice(),results));
+    let playerSelection = prompt("Make Your Choice: ").toLowerCase();
+
+    while (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
+        playerSelection = prompt("A VALID Choice: ").toLowerCase();
+    }
+
+    return playerSelection;
+}
+
+// PROGRAM STARTS
+
+
+playRound(getPlayerChoice(), getComputerChoice());
