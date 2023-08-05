@@ -91,33 +91,7 @@ const getPlayerChoice = () => {
 }
 
 
-const game = () => {
-    playerPoints = 0;
-    comPoints = 0;
 
-    for (let i = 1; i <= 5; i++) {
-        switch (playRound(getPlayerChoice(), getComputerChoice())){
-            case "You WIN!":
-                playerPoints++;
-                break;
-            case "You lose!":
-                comPoints++;
-                break;
-        }
-    }
-    console.log(playerPoints);
-    console.log(comPoints);    
-    if (playerPoints > comPoints){
-        alert("CONGRATULATION, YOU WIN!!!");
-    }
-    else if (comPoints > playerPoints){
-
-        alert('OH NO, YOU LOST!!!')
-    }
-    else{
-        alert("It's a draw, pfft...")
-    }
-}
 
 // PROGRAM STARTS
 
