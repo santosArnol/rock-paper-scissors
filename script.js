@@ -32,67 +32,20 @@ const getComputerChoice = () => {
     }
 }
 
-/*let playRound = (playerSelection, computerSelection,) => {
-    console.log("PC choice was " + computerSelection)
-    if (playerSelection == "rock") {
-        switch (computerSelection) {
-            case "rock":
-                return "Draw";
 
-            case "paper":
-                return "You Lose!";
 
-            case "scissors":
-                return "You Win!";
-        }
-    }
-    else if (playerSelection == "paper") {
-        switch (computerSelection) {
-            case "paper":
-                return "Draw";
 
-            case "scissors":
-                return "You Lose!";
 
-            case "rock":
-                return "You Win!";
-        }
-    }
-    else {
-        switch (computerSelection) {
-            case "scissors":
-                return "Draw";
-
-            case "rock":
-                return "You Lose!";
-
-            case "paper":
-                return "You Win!";
-        }
-    }
-}
-*/
-const playRound = (playerSelection, computerSelection) => {
-    console.log("Your choice was " + playerSelection);
-    console.log("PC choice was " + computerSelection);
-    console.log(results[playerSelection][computerSelection]);
-    return (results[playerSelection][computerSelection]);
+const playRound = () => {
+    alert('clicked');
 }
 
-const getPlayerChoice = () => {
+const options = document.querySelectorAll('.option');
 
-    let playerSelection = prompt("Make Your Choice: ").toLowerCase();
-
-    while (playerSelection != "rock" && playerSelection != "paper" && playerSelection != "scissors") {
-        playerSelection = prompt("A VALID Choice: ").toLowerCase();
-    }
-
-    return playerSelection;
-}
-
+options.forEach(element => {
+    element.addEventListener('clicked',playRound);
+});
 
 
 
 // PROGRAM STARTS
-
-game();

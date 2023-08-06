@@ -2,6 +2,7 @@
 *::before,
 *::after{
     box-sizing: border-box;
+    user-select: none;     
 }
 
 body{
@@ -30,6 +31,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .result{
@@ -38,5 +40,5 @@ body{
     background-color: aliceblue;
     display: flex;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
 }
