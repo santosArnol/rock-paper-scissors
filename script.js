@@ -1,4 +1,4 @@
-let results = {
+const matchupResults = {
     scissors: {
         rock: "You lose!",
         paper: "You WIN!",
@@ -12,9 +12,13 @@ let results = {
     paper: {
         scissors: "You lose!",
         rock: "You WIN!",
-        paper: "It's a draw..."
+        paper: "It's a draw...",
     }
+}
 
+let scoreKeeper = {
+    player:0,
+    pc:0,
 }
 
 //Generate a random number (1-3), each stand for a respective choice
@@ -32,20 +36,23 @@ const getComputerChoice = () => {
     }
 }
 
+const getPlayerChoice = (e) => e.target.getAttribute("data-option");
 
 
-
-
-const playRound = () => {
-    alert('clicked');
+const playRound = (e) => {
+    
+    const computerChoice = getComputerChoice();
+    const playerChoice = getPlayerChoice(e);
+    
+    console.log(matchupResults[playerChoice][computerChoice]);
+    
 }
 
 const options = document.querySelectorAll('.option');
 
 options.forEach(element => {
-    element.addEventListener('clicked',playRound);
+    element.addEventListener('click',playRound);
 });
-
 
 
 // PROGRAM STARTS
